@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AnotherFunc = () => {
+  return "Some additional text for testing"
 }
 
-export default App;
+const Hello = (props) => {
+  console.log(props)
+  return (
+    <div>
+      <h2>This is another function</h2>
+      <p>{AnotherFunc()}</p>
+    </div>
+  )
+}
+
+function App() {
+  const myClassName = "myApp"
+  const myOtherClassName = "ourApp"
+  return (
+    <>
+      {" "}
+      <div className={myClassName + "" + myOtherClassName}>
+        <h1>Hello React</h1>
+        <Hello name='Maxim' />
+      </div>
+      <div className={"second"}>
+        <h2>Test</h2>
+      </div>
+    </>
+  )
+}
+
+export default App
